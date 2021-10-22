@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+    <!-- Masthead-->
+<header class="masthead text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <img class="masthead-avatar mb-5" src="{% static 'img/logo1.jpeg' %}" alt="..." />
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">start create things</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">Computer&Electrical - Cloud - DevOps - Database </p>
+    </div>
+</header>
+
+<!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+<h1>
+    Martial Home
+</h1>
+{% endblock %}

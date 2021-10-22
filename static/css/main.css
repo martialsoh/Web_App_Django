@@ -1,0 +1,32 @@
+#main {
+    padding-top: 74px;
+}
+
+@media (min-width: 992px) {
+    #main {
+      padding-top: 104px;
+    }
+}
+
+.masthead .masthead-avatar {
+  width: 170px;
+  height: 170px;
+}
+
+.masthead {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 992px) {
+  .masthead {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.masthead {
+  background-image: url("../img/pexels1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
