@@ -1,16 +1,20 @@
+# START Service
 apiVersion: v1
 kind: Service
 metadata:
-  name: django-web-srvc
+  name: django-web-svc
   labels:
     app: django
 spec:
-  ports:
-    - port: 8000
-  selector:
-    app: django
-    tier: frontend
   type: LoadBalancer
+  ports:
+  - port: 8000
+    targetPort: 8000
+  selector:
+    name: django
+    tier: frontend
+# END SERVICE
+
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -75,16 +79,23 @@ spec:
         env:
           - name: POSTGRES_USER
             valueFrom:
-             secretKeyRef:
-               name: postgres-credentials
-               key: user
+              secretKeyRef:
+                name: postgres-credentials
+                key: user
           - name: POSTGRES_PASSWORD
             valueFrom:
-             secretKeyRef:
-               name: postgres-credentials
-               key: password
+              secretKeyRef:
+                name: postgres-credentials
+                key: password
           - name: POSTGRES_DB
             value: 'postgres'
+          - name: DATABASE_URL
+            value: postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres:5432/$(POSTGRES_DB)
+          - name: SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: django-secret-key
+                key: secret_key
         volumeMounts:
         - name: django-persistent-storage
           mountPath: /FirstProject
