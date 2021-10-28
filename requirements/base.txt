@@ -1,0 +1,5 @@
+Django==3.0.7
+psycopg2==2.8.6
+python-decouple
+dj-database-url
+django-environ==0.7.0

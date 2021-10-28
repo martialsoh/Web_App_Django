@@ -24,7 +24,7 @@ compose-manage-py:
 	docker-compose run --rm $(options) website python3 manage.py $(cmd)
 
 start-server:
-	python3 manage.py runserver 0.0.0.0:80
+	python3 manage.py runserver 0.0.0.0:8000
 
 helm-deploy:
 	helm upgrade --install django-web ./helm/django-website

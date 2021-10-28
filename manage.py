@@ -4,7 +4,10 @@ import os
 import sys
 
 
+
 def main():
+    # dotenv.read_dotenv()  #add 
+
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tech_website.settings')
     try:
         from django.core.management import execute_from_command_line

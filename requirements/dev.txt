@@ -1,5 +1,7 @@
 # Everything the developer needs in addition to the production requirements
--r prod.txt
+-r base.txt
+
+django-debug-toolbar
 
 black==19.10b0
 mypy==0.782
